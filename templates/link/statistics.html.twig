@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <h2>Всього відвідувань: {{ link.statistics|length }}</h2>
+        <p>Повне посилання: <a href="{{ link.url }}">{{ link.url }}</a></p>
+        <p>Скорочене посилання: <a href="{{ minifiedLink }}">{{ minifiedLink }}</a></p>
+        {% if link.statistics is not empty %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Час</th>
+                    <th scope="col">Країна</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in link.statistics %}
+                <tr>
+                    <td>{{item.time|date("Y-m-d H:i:s")}}</td>
+                    <td>{{item.country}}</td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        {% endif %}
+
+        <a href="{{ path('app_link_create') }}">Мініфікувати ще одне посилання</a>
+    </div>
+{% endblock %}

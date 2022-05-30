@@ -1,9 +1,1 @@
-index:
-    path: /
-    controller: App\Controller\SiteController::index
-result:
-    path: /result
-    controller: App\Controller\SiteController::result
-statistics:
-    path: /statistics
-    controller: App\Controller\SiteController::statistics
+

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form>
+                    <p>Повне посилання: <a href="{{ link.url }}">{{ link.url }}</a></p>
+                    <p>Скорочене посилання: <a href="{{ minifiedLink }}">{{ minifiedLink }}</a></p>
+                    <br>
+                    <a href="{{ path('link_statistics', {slug: link.slug}) }}">Продивитися статистику</a>
+                    <br>
+                    <a href="{{ path('app_link_create') }}">Мініфікувати ще одне посилання</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
